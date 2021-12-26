@@ -63,16 +63,15 @@ const resultTable = (function createTable(rows, cols) {
   const table = document.createElement("table");
   table.setAttribute("border", "1");
   document.body.append(table);
-
+  let counter = 0;
   for (let i = 0; i < rows; i++) {
     const tr = document.createElement("tr");
     table.append(tr);
     for (let j = 1; j <= cols; j++) {
+      ++counter;
       const td = document.createElement("td");
-      td.innerHTML = i * rows + j; // формула работает для одинаковых аргументов функции
+      td.innerHTML = counter;
       tr.append(td);
     }
   }
-})(10, 10);
-
-//resultTable...(7, 13); // для разных значений рядов и столбцов не могу придумать алгоритм
+})(15, 17);
