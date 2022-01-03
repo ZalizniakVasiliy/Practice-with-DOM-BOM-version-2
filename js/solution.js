@@ -41,7 +41,7 @@ console.log(ulWithoutAttr);
 const simpleArr = [1, 2, 3];
 const multidimensArr = [1, 2, [1.1, 1.2, 1.3], 3];
 
-const result = (function generateList(array) {
+(function generateList(array) {
   const ul = document.createElement("ul");
   for (let i = 0; i < array.length; i++) {
     const listItem = document.createElement("li");
@@ -52,14 +52,13 @@ const result = (function generateList(array) {
     );
     ul.append(listItem);
   }
+  document.body.append(ul);
   return ul;
 })(multidimensArr /* or `simpleArr` */);
-document.body.append(result);
-// console.log(result);
 
 /* ---------------------------------------Task-3-------------------------------------- */
 
-const resultTable = (function createTable(rows, cols) {
+(function createTable(rows, cols) {
   const table = document.createElement("table");
   table.setAttribute("border", "1");
   document.body.append(table);
@@ -74,4 +73,4 @@ const resultTable = (function createTable(rows, cols) {
       tr.append(td);
     }
   }
-})(15, 17);
+})(10, 10);
